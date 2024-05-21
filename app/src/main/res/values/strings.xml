@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">dm01</string>
+    <string name="next">ПРОДОЛЖИТЬ</string>
+    <string name="skip">Пропустить</string>
+    <string name="welcome_1_title">Окунитесь в мир дизайна</string>
+    <string name="welcome_1_dis">Начните свой образовательный путь с получения доступа\nк разнообразным курсам.</string>
+    <string name="welcome_2_title">Отправляйтесь в приключение</string>
+    <string name="welcome_2_dis">Изучайте интерактивные уроки, викторины и мультимедийный контент, чтобы улучшить свое понимание.</string>
+    <string name="welcome_3_title">Занимайтесь с опытными кураторам</string>
+    <string name="welcome_3_dis">Обратитесь к знающим преподавателям за индивидуальным руководством.</string>
+    <string name="welcome_4_title">Изучайте полезные материалы</string>
+    <string name="welcome_4_dis">Найдите подходящие статьи и полезные источники для вдохновления или обучения</string>
+    <string name="welcome_5_title">Раскройте свой потенциал в обучении</string>
+    <string name="welcome_5_dis">Ваш доступ к персонализированным курсам и полезным материалам по достижению успеха.</string>
+    <string name="teach">НАЧАТЬ ОБУЧЕНИЕ</string>
 </resources>
