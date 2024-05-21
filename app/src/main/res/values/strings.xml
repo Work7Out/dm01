@@ -13,4 +13,7 @@
     <string name="welcome_5_title">Раскройте свой потенциал в обучении</string>
     <string name="welcome_5_dis">Ваш доступ к персонализированным курсам и полезным материалам по достижению успеха.</string>
     <string name="teach">НАЧАТЬ ОБУЧЕНИЕ</string>
+    <string name="logo_mash">ЛОГОМАШИНА</string>
+    <string name="search">Поиск</string>
+    <string name="digest">Дайджест</string>
 </resources>
