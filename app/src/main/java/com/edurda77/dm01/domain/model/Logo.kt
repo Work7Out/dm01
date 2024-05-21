@@ -1,16 +1,15 @@
 package com.edurda77.dm01.domain.model
 
-import com.edurda77.dm01.R
 
 data class Logo(
-    val id: Int,
-    val image: Int,
+    val image: String,
     val title: String,
     val date: String,
     val url: String,
 )
 
 
+/*
 val logos = listOf(
     Logo(
         id = 1,
@@ -41,3 +40,4 @@ val logos = listOf(
         url = "https://salebot.site/md/neuradesignersubs"
     ),
 )
+*/

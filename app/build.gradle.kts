@@ -75,4 +75,11 @@ dependencies {
     annotationProcessor (libs.google.hilt.compiler)
     kapt (libs.google.hilt.compiler)
     implementation (libs.androidx.hilt.navigation.compose)
+
+    //Retrofit
+    implementation (libs.gson)
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
+    implementation(libs.coil.compose)
 }

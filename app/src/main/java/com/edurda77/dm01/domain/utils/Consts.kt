@@ -10,5 +10,10 @@ const val NEWS_MORE_SCREEN = "news_more_screen"
 const val NOTE_MORE_SCREEN = "note_more_screen"
 
 
+const val BASE_URL = "https://raw.githubusercontent.com/HayarovEd/test/"
+
+const val UNKNOWM_ERROR = "Неизвестная ошибка"
+
+
 
 

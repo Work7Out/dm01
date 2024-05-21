@@ -1,14 +1,14 @@
 package com.edurda77.dm01.domain.model
 
-import com.edurda77.dm01.R
+
 
 data class News(
-    val id: Int,
     val title: String,
     val content: String,
-    val image: Int,
+    val image: String,
 )
 
+/*
 val news= listOf(
     News(
         id  = 1,
@@ -19,7 +19,8 @@ val news= listOf(
     News(
         id  = 2,
         title = "Награждение Workspace Digital Awards",
-        content = "Недавно состоялось награждение Workspace Digital Awards, и мы заняли второе место в номинации «Фирменный стиль и брендинг» с проектом Gaga.team \uD83E\uDD73  Мы гоготали от радости, думаем, что нас слышал весь зал. Спасибо, что голосовали за нас \uD83E\uDEF6\uD83C\uDFFB  Кстати, проект можно посмотреть в нашем портфолио, там описали весь процесс: от концепции до полученных результатов  \n",
+        content = "Недавно состоялось награждение Workspace Digital Awards, и мы заняли второе место в номинации «Фирменный стиль и брендинг» с проектом Gaga.team \uD83E\uDD73  Мы гоготали от радости, думаем, что нас слышал весь зал. Спасибо, что голосовали за нас \uD83E\uDEF6\uD83C\uDFFB  Кстати, проект можно посмотреть в нашем портфолио, там описали весь процесс: от концепции до полученных результатов",
         image = R.drawable.news_2
     )
 )
+*/

@@ -1,13 +1,12 @@
 package com.edurda77.dm01.domain.model
 
-import com.edurda77.dm01.R
 
 data class Plugin(
-    val id: Int,
-    val image: Int,
+    val image: String,
     val title: String,
     val url: String,
 )
+/*
 
 val plagins = listOf(
     Plugin(
@@ -41,3 +40,4 @@ val plagins = listOf(
         url = "https://www.figma.com/community/plugin/782180430431612681/%D0%A0%D1%8B%D0%B1%D0%B0%D0%A2%D0%B5%D0%BA%D1%81%D1%82---fish-text.ru"
     ),
 )
+*/

@@ -1,5 +1,8 @@
 [versions]
 agp = "8.4.1"
+coilCompose = "2.6.0"
+converterGson = "2.9.0"
+gson = "2.10.1"
 kotlin = "1.9.21"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -11,9 +14,13 @@ composeBom = "2024.05.00"
 navigationCompose = "2.7.7"
 hilt-android = "2.51.1"
 hiltNavigationCompose = "1.2.0"
+retrofit = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -32,6 +39,7 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
 google-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt-android" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 
 
 [plugins]
