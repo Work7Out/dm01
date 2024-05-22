@@ -92,7 +92,7 @@ fun MoreScreen(
             Text(
                 text = state.value.content,
                 style = TextStyle(
-                    fontSize = 11.sp,
+                    fontSize = 13.sp,
                     fontWeight = FontWeight(600),
                     color = black,
                 )

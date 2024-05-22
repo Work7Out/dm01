@@ -29,6 +29,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.edurda77.dm01.R
 import com.edurda77.dm01.domain.utils.GRID_MAX_HEIGHT
+import com.edurda77.dm01.domain.utils.LOGO_SCREEN
 import com.edurda77.dm01.ui.theme.background
 import com.edurda77.dm01.ui.theme.black
 import com.edurda77.dm01.ui.uikit.ItemNews
@@ -55,7 +56,7 @@ fun NewsScreen(
                     event(NewsEvent.onSearch(it))
                 },
                 onClick = {
-                    navController.popBackStack()
+                    navController.navigate(LOGO_SCREEN)
                 }
             )
         },
