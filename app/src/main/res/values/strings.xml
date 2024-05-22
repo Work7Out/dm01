@@ -18,4 +18,6 @@
     <string name="digest">Дайджест</string>
     <string name="news">Новости</string>
     <string name="plugins">Полезные плагины</string>
+    <string name="notes">Полезные статьи</string>
+    <string name="video">Обучающее видео</string>
 </resources>

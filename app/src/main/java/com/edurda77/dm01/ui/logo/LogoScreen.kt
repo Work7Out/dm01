@@ -36,11 +36,15 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.edurda77.dm01.R
 import com.edurda77.dm01.domain.utils.NEWS_SCREEN
+import com.edurda77.dm01.domain.utils.NOTES_SCREEN
+import com.edurda77.dm01.domain.utils.VIDEO_SCREEN
 import com.edurda77.dm01.ui.theme.background
 import com.edurda77.dm01.ui.theme.black
 import com.edurda77.dm01.ui.uikit.ItemDigest
 import com.edurda77.dm01.ui.uikit.ItemNews
+import com.edurda77.dm01.ui.uikit.ItemNote
 import com.edurda77.dm01.ui.uikit.ItemPlugin
+import com.edurda77.dm01.ui.uikit.ItemVideo
 import com.edurda77.dm01.ui.uikit.NavigationBar
 import com.edurda77.dm01.ui.uikit.TopAppBarLogo
 
@@ -171,6 +175,86 @@ fun LogoScreen(
             ) {
                 items(state.value.plugins) {
                     ItemPlugin(plugin = it)
+                }
+            }
+            Spacer(modifier = modifier.height(50.dp))
+            Row(
+                modifier = modifier.clickable {
+                    navController.navigate(NOTES_SCREEN)
+                },
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = stringResource(R.string.notes),
+                    style = TextStyle(
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight(700),
+                        color = black,
+                        textDecoration = TextDecoration.Underline
+                    )
+                )
+                Spacer(modifier = modifier.width(2.dp))
+                IconButton(onClick = {
+                    navController.navigate(NOTES_SCREEN)
+                }) {
+                    Icon(
+                        imageVector = ImageVector.vectorResource(
+                            id = R.drawable.baseline_arrow_back_24
+                        ),
+                        contentDescription = "",
+                        tint = black
+                    )
+                }
+            }
+            Spacer(modifier = modifier.height(23.dp))
+            LazyVerticalStaggeredGrid(
+                modifier = modifier.heightIn(max = 400.dp),
+                columns = StaggeredGridCells.Fixed(2),
+                verticalItemSpacing = 30.dp,
+                horizontalArrangement = Arrangement.spacedBy(30.dp)
+            ) {
+                items(state.value.notes) {
+                    ItemNote(note = it)
+                }
+            }
+            Spacer(modifier = modifier.height(50.dp))
+            Row(
+                modifier = modifier.clickable {
+                    navController.navigate(VIDEO_SCREEN)
+                },
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = stringResource(R.string.video),
+                    style = TextStyle(
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight(700),
+                        color = black,
+                        textDecoration = TextDecoration.Underline
+                    )
+                )
+                Spacer(modifier = modifier.width(2.dp))
+                IconButton(onClick = {
+                    navController.navigate(VIDEO_SCREEN)
+                }) {
+                    Icon(
+                        imageVector = ImageVector.vectorResource(
+                            id = R.drawable.baseline_arrow_back_24
+                        ),
+                        contentDescription = "",
+                        tint = black
+                    )
+                }
+            }
+            Spacer(modifier = modifier.height(23.dp))
+            LazyVerticalStaggeredGrid(
+                modifier = modifier.heightIn(max = 400.dp),
+                columns = StaggeredGridCells.Fixed(2),
+                verticalItemSpacing = 30.dp,
+                horizontalArrangement = Arrangement.spacedBy(30.dp)
+            ) {
+                items(state.value.videos) {
+                    ItemVideo(video = it)
                 }
             }
         }
