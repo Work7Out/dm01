@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.edurda77.dm01.R
+import com.edurda77.dm01.domain.utils.GRID_MAX_HEIGHT
 import com.edurda77.dm01.domain.utils.NEWS_SCREEN
 import com.edurda77.dm01.domain.utils.NOTES_SCREEN
 import com.edurda77.dm01.domain.utils.VIDEO_SCREEN
@@ -91,7 +92,7 @@ fun LogoScreen(
             )
             Spacer(modifier = modifier.height(23.dp))
             LazyVerticalStaggeredGrid(
-                modifier = modifier.heightIn(max = 400.dp),
+                modifier = modifier.heightIn(max = GRID_MAX_HEIGHT.dp),
                 columns = StaggeredGridCells.Fixed(2),
                 verticalItemSpacing = 30.dp,
                 horizontalArrangement = Arrangement.spacedBy(30.dp)
@@ -131,13 +132,16 @@ fun LogoScreen(
             }
             Spacer(modifier = modifier.height(23.dp))
             LazyVerticalStaggeredGrid(
-                modifier = modifier.heightIn(max = 400.dp),
+                modifier = modifier.heightIn(max = GRID_MAX_HEIGHT.dp),
                 columns = StaggeredGridCells.Fixed(2),
                 verticalItemSpacing = 30.dp,
                 horizontalArrangement = Arrangement.spacedBy(30.dp)
             ) {
                 items(state.value.news) {
-                    ItemNews(news = it)
+                    ItemNews(
+                        navController = navController,
+                        news = it
+                    )
                 }
             }
             Spacer(modifier = modifier.height(50.dp))
@@ -168,7 +172,7 @@ fun LogoScreen(
             }
             Spacer(modifier = modifier.height(23.dp))
             LazyVerticalStaggeredGrid(
-                modifier = modifier.heightIn(max = 400.dp),
+                modifier = modifier.heightIn(max = GRID_MAX_HEIGHT.dp),
                 columns = StaggeredGridCells.Fixed(2),
                 verticalItemSpacing = 30.dp,
                 horizontalArrangement = Arrangement.spacedBy(30.dp)
@@ -208,13 +212,16 @@ fun LogoScreen(
             }
             Spacer(modifier = modifier.height(23.dp))
             LazyVerticalStaggeredGrid(
-                modifier = modifier.heightIn(max = 400.dp),
+                modifier = modifier.heightIn(max = GRID_MAX_HEIGHT.dp),
                 columns = StaggeredGridCells.Fixed(2),
                 verticalItemSpacing = 30.dp,
                 horizontalArrangement = Arrangement.spacedBy(30.dp)
             ) {
                 items(state.value.notes) {
-                    ItemNote(note = it)
+                    ItemNote(
+                        navController = navController,
+                        note = it
+                    )
                 }
             }
             Spacer(modifier = modifier.height(50.dp))
@@ -248,7 +255,7 @@ fun LogoScreen(
             }
             Spacer(modifier = modifier.height(23.dp))
             LazyVerticalStaggeredGrid(
-                modifier = modifier.heightIn(max = 400.dp),
+                modifier = modifier.heightIn(max = GRID_MAX_HEIGHT.dp),
                 columns = StaggeredGridCells.Fixed(2),
                 verticalItemSpacing = 30.dp,
                 horizontalArrangement = Arrangement.spacedBy(30.dp)

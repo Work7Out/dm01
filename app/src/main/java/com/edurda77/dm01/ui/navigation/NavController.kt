@@ -9,8 +9,7 @@ import androidx.navigation.navArgument
 import com.edurda77.dm01.domain.utils.SPLASH_SCREEN
 import com.edurda77.dm01.ui.logo.LogoScreen
 import com.edurda77.dm01.ui.news.NewsScreen
-import com.edurda77.dm01.ui.news_more.NewsMoreScreen
-import com.edurda77.dm01.ui.note_more.NoteMoreScreen
+import com.edurda77.dm01.ui.news_more.MoreScreen
 import com.edurda77.dm01.ui.notes.NotesScreen
 import com.edurda77.dm01.ui.splash.SplashScreen
 import com.edurda77.dm01.ui.video.VideoScreen
@@ -54,21 +53,36 @@ fun NavController(
                 navController = navController
             )
         }
-        composable(NavigationDestination.NewsMoreScreenDestination.destination,
-            arguments = listOf(navArgument("idNews") {
-                type = NavType.IntType
-            })) {
-            NewsMoreScreen(
+        composable(
+            NavigationDestination.NewsMoreScreenDestination.destination,
+            arguments = listOf(navArgument("title") {
+                type = NavType.StringType
+            },
+                navArgument("content") {
+                    type = NavType.StringType
+                },
+                navArgument("image") {
+                    type = NavType.StringType
+                }
+            )
+
+        ) {
+            MoreScreen(
                 navController = navController
             )
         }
-        composable(NavigationDestination.NoteMoreScreenDestination.destination,
-            arguments = listOf(navArgument("idNote") {
+        /*composable(
+            NavigationDestination.NoteMoreScreenDestination.destination,
+            arguments = listOf(navArgument("title") {
                 type = NavType.IntType
-            })) {
+            },
+                navArgument("content") {
+                    type = NavType.IntType
+                })
+        ) {
             NoteMoreScreen(
                 navController = navController
             )
-        }
+        }*/
     }
 }

@@ -8,24 +8,28 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.edurda77.dm01.domain.model.News
+import com.edurda77.dm01.domain.utils.MORE_SCREEN
 import com.edurda77.dm01.ui.theme.black
+import java.net.URLEncoder
+import java.nio.charset.StandardCharsets
 
 @Composable
 fun ItemNews(
     modifier: Modifier = Modifier,
+    navController: NavHostController,
     news: News,
 ) {
-    val context = LocalContext.current
+    val encodedUrl = URLEncoder.encode(news.image, StandardCharsets.UTF_8.toString())
     Column (
         modifier = modifier.clickable {
-
+            navController.navigate("$MORE_SCREEN/${news.title}/${news.content}/$encodedUrl")
         }
     ) {
         AsyncImage(
