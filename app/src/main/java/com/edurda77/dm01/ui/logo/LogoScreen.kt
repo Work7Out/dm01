@@ -1,7 +1,6 @@
 package com.edurda77.dm01.ui.logo
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.gestures.rememberScrollableState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -159,7 +158,7 @@ fun LogoScreen(
                 )
                 Spacer(modifier = modifier.width(2.dp))
                 IconButton(onClick = {
-                    //navController.navigate(PLU)
+                    navController.navigate(NEWS_SCREEN)
                 }) {
                     Icon(
                         imageVector = ImageVector.vectorResource(

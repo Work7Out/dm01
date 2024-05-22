@@ -19,5 +19,6 @@
     <string name="news">Новости</string>
     <string name="plugins">Полезные плагины</string>
     <string name="notes">Полезные статьи</string>
+    <string name="notes_short">Статьи</string>
     <string name="video">Обучающее видео</string>
 </resources>

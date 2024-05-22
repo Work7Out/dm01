@@ -71,9 +71,9 @@ fun MoreScreen(
                 )
             }
         },
-        bottomBar = {
+      /*  bottomBar = {
             NavigationBar(navController = navController)
-        }
+        }*/
     ) { paddings ->
         Column(
             modifier = modifier
