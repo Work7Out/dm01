@@ -1,6 +1,7 @@
 package com.edurda77.dm01.ui.uikit
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -44,7 +45,8 @@ fun TopAppBar(
     ) {
         Row(
             modifier = modifier
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .clickable (onClick = onClick),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             IconButton(onClick = onClick) {
