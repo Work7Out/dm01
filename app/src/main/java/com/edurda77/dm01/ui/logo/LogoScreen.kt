@@ -83,7 +83,7 @@ fun LogoScreen(
             Text(
                 text = stringResource(R.string.digest),
                 style = TextStyle(
-                    fontSize = 18.sp,
+                    fontSize = 20.sp,
                     fontWeight = FontWeight(700),
                     color = black,
                     textDecoration = TextDecoration.Underline
@@ -110,7 +110,7 @@ fun LogoScreen(
                 Text(
                     text = stringResource(R.string.news),
                     style = TextStyle(
-                        fontSize = 18.sp,
+                        fontSize = 20.sp,
                         fontWeight = FontWeight(700),
                         color = black,
                         textDecoration = TextDecoration.Underline
@@ -147,7 +147,7 @@ fun LogoScreen(
                 Text(
                     text = stringResource(R.string.plugins),
                     style = TextStyle(
-                        fontSize = 18.sp,
+                        fontSize = 20.sp,
                         fontWeight = FontWeight(700),
                         color = black,
                         textDecoration = TextDecoration.Underline
@@ -187,7 +187,7 @@ fun LogoScreen(
                 Text(
                     text = stringResource(R.string.notes),
                     style = TextStyle(
-                        fontSize = 18.sp,
+                        fontSize = 20.sp,
                         fontWeight = FontWeight(700),
                         color = black,
                         textDecoration = TextDecoration.Underline
@@ -227,7 +227,7 @@ fun LogoScreen(
                 Text(
                     text = stringResource(R.string.video),
                     style = TextStyle(
-                        fontSize = 18.sp,
+                        fontSize = 20.sp,
                         fontWeight = FontWeight(700),
                         color = black,
                         textDecoration = TextDecoration.Underline
