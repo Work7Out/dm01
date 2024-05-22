@@ -16,4 +16,6 @@
     <string name="logo_mash">ЛОГОМАШИНА</string>
     <string name="search">Поиск</string>
     <string name="digest">Дайджест</string>
+    <string name="news">Новости</string>
+    <string name="plugins">Полезные плагины</string>
 </resources>
