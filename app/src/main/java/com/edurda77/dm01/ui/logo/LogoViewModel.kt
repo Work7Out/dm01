@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.edurda77.dm01.domain.model.Logo
 import com.edurda77.dm01.domain.model.News
+import com.edurda77.dm01.domain.model.Note
 import com.edurda77.dm01.domain.model.Plugin
+import com.edurda77.dm01.domain.model.Video
 import com.edurda77.dm01.domain.repository.RemoteRepository
 import com.edurda77.dm01.domain.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -26,6 +28,8 @@ class LogoViewModel @Inject constructor(
     private val _shadowLogos = MutableStateFlow<List<Logo>>(emptyList())
     private val _shadowNews = MutableStateFlow<List<News>>(emptyList())
     private val _shadowPlugins = MutableStateFlow<List<Plugin>>(emptyList())
+    private val _shadowNotes = MutableStateFlow<List<Note>>(emptyList())
+    private val _shadowVideo = MutableStateFlow<List<Video>>(emptyList())
 
 
     init {
@@ -33,6 +37,8 @@ class LogoViewModel @Inject constructor(
             async { getNews() }.onAwait
             async { getLogos() }.onAwait
             async { getPlugins() }.onAwait
+            async { getNotes() }.onAwait
+            async { getVideos() }.onAwait
         }
     }
 
@@ -54,6 +60,18 @@ class LogoViewModel @Inject constructor(
                         )
                     },
                     plugins = _shadowPlugins.value.filter {
+                        it.title.contains(
+                            logoEvent.query,
+                            ignoreCase = true
+                        )
+                    },
+                    videos = _shadowVideo.value.filter {
+                        it.title.contains(
+                            logoEvent.query,
+                            ignoreCase = true
+                        )
+                    },
+                    notes = _shadowNotes.value.filter {
                         it.title.contains(
                             logoEvent.query,
                             ignoreCase = true
@@ -110,6 +128,40 @@ class LogoViewModel @Inject constructor(
                 _state.value.copy(
                     isLoading = false,
                     plugins = result.data ?: emptyList()
+                )
+                    .updateState()
+            }
+        }
+    }
+
+    private suspend fun getNotes() {
+        when (val result = remoteRepository.getNotes()) {
+            is Resource.Error -> {
+
+            }
+
+            is Resource.Success -> {
+                _shadowNotes.value = result.data ?: emptyList()
+                _state.value.copy(
+                    isLoading = false,
+                    notes = result.data ?: emptyList()
+                )
+                    .updateState()
+            }
+        }
+    }
+
+    private suspend fun getVideos() {
+        when (val result = remoteRepository.getVideos()) {
+            is Resource.Error -> {
+
+            }
+
+            is Resource.Success -> {
+                _shadowVideo.value = result.data ?: emptyList()
+                _state.value.copy(
+                    isLoading = false,
+                    videos = result.data ?: emptyList()
                 )
                     .updateState()
             }

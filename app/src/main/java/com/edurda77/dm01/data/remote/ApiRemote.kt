@@ -11,4 +11,10 @@ interface ApiRemote {
 
     @GET("main/plugins")
     suspend fun getPlugins () : List<PluginDto>
+
+    @GET("main/notes")
+    suspend fun getNotes () : List<NoteDto>
+
+    @GET("main/video")
+    suspend fun getVideos () : List<VideoDto>
 }
