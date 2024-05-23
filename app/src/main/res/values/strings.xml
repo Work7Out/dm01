@@ -2,7 +2,7 @@
     <string name="app_name">dm01</string>
     <string name="next">ПРОДОЛЖИТЬ</string>
     <string name="skip">Пропустить</string>
-    <string name="welcome_1_title">Окунитесь в мир дизайна</string>
+    <string name="welcome_1_title">Окунитесь\nв мир дизайна</string>
     <string name="welcome_1_dis">Начните свой образовательный путь с получения доступа\nк разнообразным курсам.</string>
     <string name="welcome_2_title">Отправляйтесь в приключение</string>
     <string name="welcome_2_dis">Изучайте интерактивные уроки, викторины и мультимедийный контент, чтобы улучшить свое понимание.</string>

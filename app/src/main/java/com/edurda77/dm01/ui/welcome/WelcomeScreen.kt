@@ -32,6 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.edurda77.dm01.R
 import com.edurda77.dm01.domain.model.tabs
@@ -46,7 +47,8 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun WelcomeScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    viewModel: WelcomeViewModel = hiltViewModel()
 ) {
     val coroutineScope = rememberCoroutineScope()
     val pagerState = rememberPagerState(
@@ -69,6 +71,7 @@ fun WelcomeScreen(
                         pagerState.scrollToPage(it + 1)
                     } else {
                         navController.navigate(LOGO_SCREEN)
+                        viewModel.setNoFirst()
                     }
                 }
             },
@@ -99,7 +102,7 @@ fun ItemPager(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            modifier = modifier.size(270.dp),
+            modifier = modifier.height(270.dp),
             painter = painterResource(id = image),
             contentDescription = "",
             contentScale = ContentScale.FillHeight,

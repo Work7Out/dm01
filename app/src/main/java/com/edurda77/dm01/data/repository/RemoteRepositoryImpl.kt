@@ -13,7 +13,7 @@ import com.edurda77.dm01.domain.model.Plugin
 import com.edurda77.dm01.domain.model.Video
 import com.edurda77.dm01.domain.repository.RemoteRepository
 import com.edurda77.dm01.domain.utils.Resource
-import com.edurda77.dm01.domain.utils.UNKNOWM_ERROR
+import com.edurda77.dm01.domain.utils.UNKNOWN_ERROR
 import javax.inject.Inject
 
 class RemoteRepositoryImpl @Inject constructor(
@@ -24,7 +24,7 @@ class RemoteRepositoryImpl @Inject constructor(
             val result = apiRemote.getLogos().convertToLogo()
             Resource.Success(result)
         } catch (e: Exception) {
-            Resource.Error(e.message ?: UNKNOWM_ERROR)
+            Resource.Error(e.message ?: UNKNOWN_ERROR)
         }
     }
 
@@ -33,7 +33,7 @@ class RemoteRepositoryImpl @Inject constructor(
             val result = apiRemote.getNews().convertToNews()
             Resource.Success(result)
         } catch (e: Exception) {
-            Resource.Error(e.message ?: UNKNOWM_ERROR)
+            Resource.Error(e.message ?: UNKNOWN_ERROR)
         }
     }
 
@@ -42,7 +42,7 @@ class RemoteRepositoryImpl @Inject constructor(
             val result = apiRemote.getPlugins().convertToPlugin()
             Resource.Success(result)
         } catch (e: Exception) {
-            Resource.Error(e.message ?: UNKNOWM_ERROR)
+            Resource.Error(e.message ?: UNKNOWN_ERROR)
         }
     }
 
@@ -51,7 +51,7 @@ class RemoteRepositoryImpl @Inject constructor(
             val result = apiRemote.getNotes().convertToNote()
             Resource.Success(result)
         } catch (e: Exception) {
-            Resource.Error(e.message ?: UNKNOWM_ERROR)
+            Resource.Error(e.message ?: UNKNOWN_ERROR)
         }
     }
 
@@ -60,7 +60,7 @@ class RemoteRepositoryImpl @Inject constructor(
             val result = apiRemote.getVideos().convertToVideo()
             Resource.Success(result)
         } catch (e: Exception) {
-            Resource.Error(e.message ?: UNKNOWM_ERROR)
+            Resource.Error(e.message ?: UNKNOWN_ERROR)
         }
     }
 }
