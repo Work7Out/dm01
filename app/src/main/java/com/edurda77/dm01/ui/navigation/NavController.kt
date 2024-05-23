@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.edurda77.dm01.domain.utils.SPLASH_SCREEN
+import com.edurda77.dm01.ui.about.AboutScreen
 import com.edurda77.dm01.ui.logo.LogoScreen
 import com.edurda77.dm01.ui.news.NewsScreen
 import com.edurda77.dm01.ui.news_more.MoreScreen
@@ -50,6 +51,11 @@ fun NavController(
         }
         composable(NavigationDestination.VideoScreenDestination.destination) {
             VideoScreen(
+                navController = navController
+            )
+        }
+        composable(NavigationDestination.AboutScreenDestination.destination) {
+            AboutScreen(
                 navController = navController
             )
         }

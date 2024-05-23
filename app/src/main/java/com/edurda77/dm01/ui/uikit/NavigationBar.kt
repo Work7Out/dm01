@@ -20,6 +20,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.edurda77.dm01.R
+import com.edurda77.dm01.domain.utils.ABOUT_SCREEN
 import com.edurda77.dm01.domain.utils.LOGO_SCREEN
 import com.edurda77.dm01.domain.utils.NEWS_SCREEN
 import com.edurda77.dm01.domain.utils.NOTES_SCREEN
@@ -83,6 +84,18 @@ fun NavigationBar(
             Image(
                 modifier = modifier.width(40.dp),
                 painter = if (currentRoute == VIDEO_SCREEN) painterResource(id = R.drawable.video_sel) else painterResource(
+                    id = R.drawable.video_un
+                ),
+                contentDescription = "",
+                contentScale = ContentScale.FillWidth
+            )
+        }
+        TextButton(onClick = {
+            navController.navigate(ABOUT_SCREEN)
+        }) {
+            Image(
+                modifier = modifier.width(40.dp),
+                painter = if (currentRoute == ABOUT_SCREEN) painterResource(id = R.drawable.video_sel) else painterResource(
                     id = R.drawable.video_un
                 ),
                 contentDescription = "",
