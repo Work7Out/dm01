@@ -24,6 +24,7 @@ const val TG_LINK = "https://t.me/+0Ukv9dEXGBU2MjEy"
 const val YOUTUBE_LINK = "https://www.youtube.com/@LogomachineStudio"
 const val PHONE = "78124219938"
 const val EMAIL = "info@logomachine.ru"
+const val LIZ_LINK = "https://islod.obrnadzor.gov.ru/rlic/details/95d25a4f-407b-541d-09de-a3f228a48ebc/?roistat_visit=4523420"
 
 
 
