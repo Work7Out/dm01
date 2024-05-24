@@ -1,5 +1,8 @@
 package com.edurda77.dm01.ui.about
 
+import android.content.Intent
+import android.net.Uri
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
@@ -28,6 +32,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.edurda77.dm01.R
+import com.edurda77.dm01.domain.utils.EMAIL
+import com.edurda77.dm01.domain.utils.PHONE
+import com.edurda77.dm01.domain.utils.TG_LINK
+import com.edurda77.dm01.domain.utils.VK_LINK
+import com.edurda77.dm01.domain.utils.YOUTUBE_LINK
 import com.edurda77.dm01.ui.theme.background
 import com.edurda77.dm01.ui.theme.black
 import com.edurda77.dm01.ui.uikit.NavigationBar
@@ -37,6 +46,7 @@ fun AboutScreen(
     modifier: Modifier = Modifier,
     navController: NavHostController,
 ) {
+    val context = LocalContext.current
     Scaffold(
         modifier = modifier.fillMaxSize(),
         containerColor = background,
@@ -85,7 +95,9 @@ fun AboutScreen(
                 image = R.drawable.ic_vk,
                 title = stringResource(id = R.string.vk_group),
                 onClick = {
-
+                    val uri = Uri.parse(VK_LINK)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context.startActivity(intent)
                 }
             )
             Spacer(modifier = modifier.height(25.dp))
@@ -93,7 +105,9 @@ fun AboutScreen(
                 image = R.drawable.ic_tg,
                 title = stringResource(id = R.string.telegram),
                 onClick = {
-
+                    val uri = Uri.parse(TG_LINK)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context.startActivity(intent)
                 }
             )
             Spacer(modifier = modifier.height(25.dp))
@@ -101,7 +115,9 @@ fun AboutScreen(
                 image = R.drawable.ic_you_tybe,
                 title = stringResource(id = R.string.you_tube),
                 onClick = {
-
+                    val uri = Uri.parse(YOUTUBE_LINK)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context.startActivity(intent)
                 }
             )
             Spacer(modifier = modifier.height(25.dp))
@@ -109,7 +125,14 @@ fun AboutScreen(
                 image = R.drawable.ic_phone,
                 title = stringResource(id = R.string.to_call),
                 onClick = {
-
+                    val u = Uri.parse("tel:$PHONE")
+                    val i = Intent(Intent.ACTION_DIAL, u)
+                    try {
+                        context.startActivity(i)
+                    } catch (s: SecurityException) {
+                        Toast.makeText(context, "An error occurred", Toast.LENGTH_LONG)
+                            .show()
+                    }
                 }
             )
             Spacer(modifier = modifier.height(25.dp))
@@ -117,7 +140,12 @@ fun AboutScreen(
                 image = R.drawable.ic_ask,
                 title = stringResource(id = R.string.ask),
                 onClick = {
-
+                    val emailAddress = arrayOf(EMAIL)
+                    val i = Intent(Intent.ACTION_SEND)
+                    i.putExtra(Intent.EXTRA_EMAIL,emailAddress)
+                    i.putExtra(Intent.EXTRA_SUBJECT,"Спросить")
+                    i.setType("message/rfc822")
+                    context.startActivity(Intent.createChooser(i,"Выберете почтовый клиент"))
                 }
             )
             Spacer(modifier = modifier.height(25.dp))

@@ -19,6 +19,12 @@ const val UNKNOWN_ERROR = "Неизвестная ошибка"
 const val SHARED_DATA = "shared_data"
 const val SHARED_IS_FIRST = "shared_is_first"
 
+const val VK_LINK = "https://vk.com/logomachine_education"
+const val TG_LINK = "https://t.me/+0Ukv9dEXGBU2MjEy"
+const val YOUTUBE_LINK = "https://www.youtube.com/@LogomachineStudio"
+const val PHONE = "78124219938"
+const val EMAIL = "info@logomachine.ru"
+
 
 
 
