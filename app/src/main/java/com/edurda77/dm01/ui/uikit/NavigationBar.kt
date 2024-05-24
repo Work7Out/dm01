@@ -95,8 +95,8 @@ fun NavigationBar(
         }) {
             Image(
                 modifier = modifier.width(40.dp),
-                painter = if (currentRoute == ABOUT_SCREEN) painterResource(id = R.drawable.video_sel) else painterResource(
-                    id = R.drawable.video_un
+                painter = if (currentRoute == ABOUT_SCREEN) painterResource(id = R.drawable.contacts_sel) else painterResource(
+                    id = R.drawable.contacts_un
                 ),
                 contentDescription = "",
                 contentScale = ContentScale.FillWidth

@@ -21,4 +21,11 @@
     <string name="notes">Полезные статьи</string>
     <string name="notes_short">Статьи</string>
     <string name="video">Обучающее видео</string>
+    <string name="contacts">Контакты</string>
+    <string name="vk_group">Группа ВК</string>
+    <string name="telegram">Секретный канал Логомашины</string>
+    <string name="you_tube">YouTube</string>
+    <string name="to_call">Позвонить</string>
+    <string name="ask">Спросить про курсы / сотрудничество</string>
+    <string name="liz">Лицензия наосуществление\nобразовательной деятельности</string>
 </resources>
